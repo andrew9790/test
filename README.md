@@ -1,5 +1,5 @@
 
-# 본 프로젝트는 라즈베리파이를 이용한 사물인터넷 보안 테스트 플랫폼으로 계속 수정중에 있습니다. 
+# 본 프로젝트는 라즈베리파이를 이용한 사물인터넷 보안 테스트 플랫폼으로 계속 수정중에 있습니다.
 
 
 ## 프로젝트소개 
@@ -22,37 +22,36 @@ TCP/IP 소켓통신은 무선인터넷환경에서 진행되었습니다.
 ### 윈도우서버 
 * 윈도우 서버
   * 윈도우서버는 Visual Studio 2015에서 작성되었으며 mfc로 구현되었습니다.
-  * 라즈베리파이에서의 전송데이터를 수신받아 안드로이드 애플리케이션으로 데이터를 전송 할수 있게 구현합니다.
-
-  * 데이터베이스는 Mysql을 이용하여 구성합니다.
+  * 라즈베리파이에서의 전송데이터를 수신받아 안드로이드 애플리케이션으로 데이터를 전송 할수 있게 구현합니다.    
+* MySQL
+  * 데이터베이스는 MySQL을 이용하여 구성합니다.
   * 윈도우 서버로 전송되는 데이터를 분류하여 저장하도록 구현합니다.
-  * [Mysql 설치](https://dev.mysql.com/doc/refman/5.7/en/installing.html)
-    *mysql 설치 방법은 위 링크를 참조하시기 바랍니다. 
-  * 데이터베이스는 [Mysql 5.x 버전](https://dev.mysql.com/downloads/mysql/) 이상을 권장합니다. 
+  * [MySQL 설치](https://dev.mysql.com/doc/refman/5.7/en/installing.html) 
+		*  Mysql 설치방법은 해당링크를 참조하시기 바랍니다. 
+  * 데이터베이스는 [MySQL 5.x 버전](https://dev.mysql.com/downloads/mysql/) 이상을 권장합니다. 
   * 설치완료 후 데이터베이스 및 테이블 생성
-    * 본 테스트 플랫폼은 아래와 같이 생성하시면 됩니다.
+	  *  본 테스트 플랫폼은 아래와 같이 생성하시면 됩니다.
       ```
       create database issi;
-      use issi;
-      create table data(
-      data1 varchar(100) not null, 
+      use issi;  
+      create table data(  
+      data1 varchar(100) not null,   
       ....
       data5 varchar(100) not null,
       date varchar(20) not null);
       ```
-    * 사용자환경에 따라 데이터베이스 구성을 바꿔서 사용하시면 됩니다.
-    
+    * 사용자환경에 따라 데이터베이스 구성을 바꿔서 사용하시면 됩니다. 
 * Apache
   * 준비중 입니다.
 
 ### 안드로이드 
 * 안드로이드는 서버에서 전송하는 데이터값을 모니터링 할수 있도록 구현합니다.
+* 안드로이드는 Android Studio에서 작성되었습니다.
 * [Android Studio 설치](https://developer.android.com/studio/index.html)
-  * 안드로이드는 Android Studio에서 작성되었습니다.
   * 설치는 위 링크에서 가능합니다.
-
+* 안드로이드 킷캣 4.4.2 버전에서 구현하였습니다. 하위버전의 안드로이드에서 오류가 발생할수 있습니다. 
 ### Bro IDS 
-* 서버와 통신하는 모든 기기간 패킷 분석을 통해 비정상 행위를 탐지하도록 구현합니다.
+* Bro IDS는 서버와 통신하는 모든 기기간 패킷 분석을 통해 비정상 행위를 탐지하도록 구현합니다.
 * [Ubuntu 설치](https://www.ubuntu.com/download/desktop)
   * Ubuntu 16.04 LTS 버전을 사용합니다.
   * 설치파일 다운로드는 위 링크에서 가능합니다.
@@ -64,8 +63,9 @@ TCP/IP 소켓통신은 무선인터넷환경에서 진행되었습니다.
  
 ### 키관리서버 
 * 키관리서버는 윈도우서버와 독립된 데이터베이스 서버입니다.
-* Mysql
-  * 설치방법은 윈도우서버내 [mysql 설치](https://dev.mysql.com/doc/refman/5.7/en/installing.html)를 참조하시면 됩니다.
+	* 데이터 통신시 사용하는  AES암호화 기법에서 공개키 관리를 위해 구현합니다.
+* MySQL
+  * 설치방법은 [MySQL 설치](https://dev.mysql.com/doc/refman/5.7/en/installing.html)를 참조하시면 됩니다.
   * 설치완료 후 데이터베이스 및 테이블 생성
     * 본 테스트 플랫폼은 아래와 같이 생성하시면 됩니다.
      ```
