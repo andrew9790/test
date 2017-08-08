@@ -113,7 +113,7 @@ TCP/IP 소켓통신은 무선인터넷환경에서 진행되었습니다.
 #### 라즈베리파이 라이브러리 추가 방법
  * 터미널을 실행하여 다음의 경로에 본 플랫폼에서 제공하는 AES디렉토리를 추가합니다. 
  	```
-	cp -r /home/pi/AES /usr/inclue
+	cp -r /home/pi/AES /usr/include
 	```
 	* 해당 명령어 입력시 include폴더에 AES폴더가 복사되며 TestClient.c에서 AES헤더를 사용할 수 있습니다.
 
